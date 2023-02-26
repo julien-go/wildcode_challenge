@@ -10,14 +10,12 @@ function App() {
   const getData = () => {
 		axios.get("/api/get-argonauts")
 		.then((res)=> {
-      console.log(res.data)
 		  setArgonauts(res.data.argonauts)}
 		)
 		.catch((err) => console.error(err))
 	}
 
   const addData = (name) => {
-    console.log(typeof name)
     if(name === '' || name.length > 45) {
       return
     }
@@ -25,7 +23,6 @@ function App() {
       name
     })
 		.then((res)=> {
-      console.log(res.data)
 		  res.data.response && setArgonauts(res.data.argonauts)
       getData()
     })
@@ -44,7 +41,7 @@ function App() {
       </header>
       <main>
         <Form addData={addData} />
-        <List getData={getData} argonauts={argonauts}/>
+        <List argonauts={argonauts}/>
       </main>
       <footer>
         <p>Réalisé par Jason en Anthestérion de l'an 515 avant JC</p>

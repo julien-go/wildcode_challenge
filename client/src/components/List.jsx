@@ -1,11 +1,4 @@
-import {useEffect } from "react"
-
-const List = ({getData, argonauts}) => {
-
-	useEffect(()=> {
-		console.log(argonauts)
-	})
-
+const List = ({argonauts}) => {
 	return (
 		<div>
 			<h2>Membres de l'équipage</h2>
