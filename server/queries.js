@@ -17,7 +17,8 @@ export const getArgonauts = (req, res) => {
 }
 
 export const addArgonauts = (req, res)=> {
-  pool.query('INSERT INTO argonauts (name) VALUES (?)', [req.body.name], (error, results)=> {
+  const newName = req.body.name
+  pool.query('INSERT INTO argonauts (name) VALUES ($1)', [newName.toString()], (error, results, fields)=> {
     if(error) throw error
     res.json({response: true})
   })

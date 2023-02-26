@@ -14,13 +14,9 @@ app.use(
   })
 )
 
-
 app.get('/api/get-argonauts', getArgonauts)
 app.post('/api/add-argonauts', addArgonauts)
 
-
-
-  
 app.listen(PORT, ()=> {
 	console.log(`Server listening on ${PORT}`);
 } )
