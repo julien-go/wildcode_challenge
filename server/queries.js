@@ -10,7 +10,7 @@ const pool = new Pool({
 })
 
 export const getArgonauts = (req, res) => {
-  pool.query('SELECT * FROM argonauts', (error, results) => {
+  pool.query('SELECT * FROM argonauts ORDER BY id', (error, results) => {
     if(error) throw error
     res.json({response: true, argonauts: results.rows})
   })
